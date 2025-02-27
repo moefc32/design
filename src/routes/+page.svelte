@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { toast } from 'svoast';
+    import AOS from 'aos';
 
     import Title from '$lib/component/Title.svelte';
 
