@@ -9,7 +9,7 @@
             href={youtube[0]?.url}
             target="_blank"
             class="block w-full lg:w-2/3 overflow-hidden"
-            title={youtube[0]?.name}
+            title={youtube[0]?.title}
         >
             <div
                 class="!bg-cover aspect-video rounded-sm"
@@ -29,13 +29,13 @@
                         d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                     /></svg
                 >
-                <span class="truncate">{youtube[0]?.name}</span>
+                <span class="truncate">{youtube[0]?.title}</span>
             </div>
         </a>
         <div class="hidden lg:flex flex-1 flex-col justify-between gap-4">
             {#each youtube as item, i}
                 {#if i > 0}
-                    <div class="flex flex-1 gap-3 w-full" title={item.name}>
+                    <div class="flex flex-1 gap-3 w-full" title={item.title}>
                         <a
                             href={item.url}
                             target="_blank"
@@ -47,7 +47,7 @@
                             target="_blank"
                             class="block flex-1 text-white xl:text-lg line-clamp-3 h-[4.5em] overflow-hidden"
                         >
-                            {item.name}
+                            {item.title}
                         </a>
                     </div>
                 {/if}
