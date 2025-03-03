@@ -12,7 +12,7 @@
             title={youtube[0]?.title}
         >
             <div
-                class="!bg-cover aspect-video rounded-sm"
+                class="bg-cover! aspect-video rounded-sm"
                 style="background: url({youtube[0]
                     ?.image}) center center no-repeat;"
             ></div>
@@ -39,7 +39,7 @@
                         <a
                             href={item.url}
                             target="_blank"
-                            class="block !bg-cover aspect-video rounded-sm"
+                            class="block bg-cover! aspect-video rounded-sm"
                             style="background: url({item.image}) center center no-repeat;"
                         ></a>
                         <a
