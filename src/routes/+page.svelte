@@ -6,7 +6,7 @@
     import YoutubeFeed from '$lib/component/YoutubeFeed.svelte';
     import ShowcaseCard from '$lib/component/ShowcaseCard.svelte';
 
-    // const globalSearchModalEl = document.querySelector("#global-search");
+    // const globalSearchModalEl = document.querySelector('#global-search');
     // const globalSearchModal =
     //   globalSearchModalEl && new bootstrap.Modal(globalSearchModalEl, {});
 
@@ -17,11 +17,11 @@
     let youtube = [];
 
     // globalSearch: {
-    //   query: "",
-    //   queryModal: "",
+    //   query: '',
+    //   queryModal: '',
     //   toggle: false,
     //   loading: false,
-    //   backend: "https://api.mf-chan.com/search",
+    //   backend: 'https://api.mf-chan.com/search',
     //   searchTime: 0,
     //   searchResult: [],
     //   loadData: async function () {
@@ -47,7 +47,7 @@
     //     try {
     //       if (query) {
     //         queryModal = query;
-    //         query = "";
+    //         query = '';
 
     //         globalSearchModal.show();
     //         await loadData();
