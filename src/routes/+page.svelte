@@ -82,7 +82,10 @@
 
 <main class="flex flex-1 flex-col gap-9 mx-12 my-6">
     <div class="flex flex-col gap-6 w-full">
-        <div class="flex flex-row justify-center gap-1 p-[1px] w-full">
+        <div
+            role="tablist"
+            class="flex flex-row justify-center gap-1 p-[1px] w-full"
+        >
             <button
                 role="tab"
                 class="btn flex-1 font-normal {showcaseTab === 0

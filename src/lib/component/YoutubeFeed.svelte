@@ -39,7 +39,7 @@
                         <a
                             href={item.url}
                             target="_blank"
-                            class="block bg-cover! aspect-video rounded-sm"
+                            class="block bg-cover! h-full aspect-video rounded-sm"
                             style="background: url({item.image}) center center no-repeat;"
                         ></a>
                         <a
