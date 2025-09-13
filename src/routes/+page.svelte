@@ -78,7 +78,7 @@
     });
 </script>
 
-<YoutubeFeed {youtube} />
+<YoutubeFeed {youtube} {dataLoading} />
 
 <main class="flex flex-1 flex-col gap-9 mx-12 my-6">
     <div class="flex flex-col gap-6 w-full">
@@ -124,9 +124,19 @@
             </button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {#each showcaseTab === 0 ? behance : dribbble as item, i}
-                <ShowcaseCard {item} />
-            {/each}
+            {#if !dataLoading}
+                {#each showcaseTab === 0 ? behance : dribbble as item, i}
+                    <ShowcaseCard {item} />
+                {/each}
+            {:else}
+                {#each Array(6) as _, i}
+                    <div class="flex flex-col" data-aos="fade-up">
+                        <div
+                            class="card bg-gray-200 w-full aspect-3/2 rounded-lg border-[1px] border-gray-300 shadow-lg animate-pulse"
+                        ></div>
+                    </div>
+                {/each}
+            {/if}
         </div>
     </div>
 </main>
