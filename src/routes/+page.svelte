@@ -88,9 +88,10 @@
         >
             <button
                 role="tab"
-                class="btn flex-1 font-normal {showcaseTab === 0
+                class="btn flex-1 font-normal {showcaseTab === 0 && !dataLoading
                     ? 'bg-[#1769ff] hover:bg-[#0051e5] text-white'
                     : 'bg-white hover:bg-gray-100 text-gray-500 border-gray-300'} transition-all duration-250 ease-in-out w-full max-w-56 rounded-s-xl"
+                disabled={dataLoading}
                 on:click={() => (showcaseTab = 0)}
             >
                 <svg
@@ -106,9 +107,10 @@
             </button>
             <button
                 role="tab"
-                class="btn flex-1 font-normal {showcaseTab === 1
+                class="btn flex-1 font-normal {showcaseTab === 1 && !dataLoading
                     ? 'bg-[#ea4c89] hover:bg-[#e51f6c] text-white'
                     : 'bg-white hover:bg-gray-100 text-gray-500 border-gray-300'} transition-all duration-250 ease-in-out w-full max-w-56 rounded-e-xl"
+                disabled={dataLoading}
                 on:click={() => (showcaseTab = 1)}
             >
                 <svg
