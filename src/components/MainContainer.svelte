@@ -2,13 +2,10 @@
     import { onMount } from 'svelte';
     import { toast } from 'svoast';
     import AOS from 'aos';
+    import ky from 'ky';
 
     import YoutubeFeed from '../components/YoutubeFeed.svelte';
     import ShowcaseCard from '../components/ShowcaseCard.svelte';
-
-    // const globalSearchModalEl = document.querySelector('#global-search');
-    // const globalSearchModal =
-    //   globalSearchModalEl && new bootstrap.Modal(globalSearchModalEl, {});
 
     let dataLoading = true;
     let showcaseTab = 0;
@@ -16,54 +13,13 @@
     let dribbble = [];
     let youtube = [];
 
-    // globalSearch: {
-    //   query: '',
-    //   queryModal: '',
-    //   toggle: false,
-    //   loading: false,
-    //   backend: import.meta.env.PUBLIC_SEARCH_URL,
-    //   searchTime: 0,
-    //   searchResult: [],
-    //   loadData: async function () {
-    //     searchResult = [];
-
-    //     try {
-    //       if (queryModal) {
-    //         loading = true;
-    //         const response = await fetch(
-    //           `${backend}?q=${queryModal}`
-    //         );
-
-    //         searchTime = response.data.data.searchTime;
-    //         searchResult = response.data.data.searchResult;
-    //       }
-    //     } catch (e) {
-    //       console.error(e);
-    //     }
-
-    //     loading = false;
-    //   },
-    //   open: async function () {
-    //     try {
-    //       if (query) {
-    //         queryModal = query;
-    //         query = '';
-
-    //         globalSearchModal.show();
-    //         await loadData();
-    //       }
-    //     } catch (e) {
-    //       console.error(e);
-    //     }
-    //   },
-    // }
-
     onMount(async () => {
         AOS.init();
 
         try {
-            const response = await fetch(import.meta.env.PUBLIC_BACKEND);
-            const { data } = await response.json();
+            const { data } = await ky
+                .get(import.meta.env.PUBLIC_BACKEND)
+                .json();
 
             behance = data.behance;
             dribbble = data.dribbble;
