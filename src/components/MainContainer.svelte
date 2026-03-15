@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { toast } from 'svelte-sonner';
+    import { Toaster, toast } from 'svelte-sonner';
     import AOS from 'aos';
     import ky from 'ky';
 
@@ -96,3 +96,12 @@
         </div>
     </div>
 </main>
+
+<Toaster
+    richColors
+    theme="system"
+    position="bottom-center"
+    toastOptions={{
+        style: 'font-size: 1rem;',
+    }}
+/>
