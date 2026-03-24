@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { SquareArrowOutUpRight } from 'lucide-svelte';
     import { Toaster, toast } from 'svelte-sonner';
     import AOS from 'aos';
     import ky from 'ky';
@@ -11,9 +12,9 @@
 
     let dataLoading = true;
     let showcaseTab = 0;
-    let behance = [];
-    let dribbble = [];
-    let youtube = [];
+    let behance = {};
+    let dribbble = {};
+    let youtube = {};
 
     onMount(async () => {
         AOS.init();
@@ -83,9 +84,11 @@
                 </svg> Dribbble
             </button>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
             {#if !dataLoading}
-                {#each showcaseTab === 0 ? behance : dribbble as item, i}
+                {#each showcaseTab === 0 ? behance?.projects : dribbble?.projects as item, i}
                     <ShowcaseCard {item} />
                 {/each}
             {:else}
@@ -98,6 +101,16 @@
                 {/each}
             {/if}
         </div>
+        {#if (showcaseTab === 0 && behance?.url) || (showcaseTab === 1 && dribbble?.url)}
+            <a
+                href={showcaseTab === 0 ? behance.url : dribbble.url}
+                target="_blank"
+                class="btn btn-primary self-center"
+            >
+                <SquareArrowOutUpRight size={14} />
+                View more on {showcaseTab === 0 ? 'Behance' : 'Dribbble'}
+            </a>
+        {/if}
     </div>
     <DomainNode base={'design'} nodes={['research', 'code']} />
 </main>
