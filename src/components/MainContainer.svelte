@@ -4,8 +4,10 @@
     import AOS from 'aos';
     import ky from 'ky';
 
-    import YoutubeFeed from '../components/YoutubeFeed.svelte';
-    import ShowcaseCard from '../components/ShowcaseCard.svelte';
+    import Banner from './Banner.svelte';
+    import DomainNode from './DomainNode.svelte';
+    import YoutubeFeed from './YoutubeFeed.svelte';
+    import ShowcaseCard from './ShowcaseCard.svelte';
 
     let dataLoading = true;
     let showcaseTab = 0;
@@ -31,6 +33,8 @@
         }
     });
 </script>
+
+<Banner />
 
 <YoutubeFeed {youtube} {dataLoading} />
 
@@ -95,6 +99,7 @@
             {/if}
         </div>
     </div>
+    <DomainNode base={'design'} nodes={['research', 'code']} />
 </main>
 
 <Toaster
