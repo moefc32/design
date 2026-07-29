@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { SquareArrowOutUpRight } from 'lucide-svelte';
+    import { SquareArrowOutUpRight } from '@lucide/svelte';
     import { Toaster, toast } from 'svelte-sonner';
     import AOS from 'aos';
     import ky from 'ky';
