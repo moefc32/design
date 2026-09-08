@@ -6,7 +6,7 @@
     <a
         href={item.url}
         target="_blank"
-        class="card flex justify-end bg-cover! w-full aspect-3/2 rounded-lg border-1 border-gray-300 overflow-hidden shadow-lg"
+        class="flex flex-col justify-end bg-cover! w-full aspect-3/2 border-1 border-gray-300 saturate-75 brightness-85 hover:saturate-100 hover:brightness-100 transition overflow-hidden shadow-lg"
         style="background: url({item.image}) center center no-repeat;"
         title={item.title}
     >

@@ -95,9 +95,9 @@
                 {/each}
             {:else}
                 {#each Array(6) as _, i}
-                    <div class="flex flex-col" data-aos="fade-up">
+                    <div class="bg-gray-200 skeleton">
                         <div
-                            class="card bg-gray-200 w-full aspect-3/2 rounded-lg border-1 border-gray-300 shadow-lg skeleton"
+                            class="aspect-3/2 border-1 border-gray-300 shadow-lg"
                         ></div>
                     </div>
                 {/each}
